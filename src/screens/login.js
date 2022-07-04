@@ -1,6 +1,6 @@
 import { Warning } from '@mui/icons-material';
 import { Box, Button, Divider, Typography } from '@mui/material';
-import { Outlet, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (

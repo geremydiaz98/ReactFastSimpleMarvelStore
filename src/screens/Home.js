@@ -1,12 +1,9 @@
 import { ShoppingCart, Store } from "@mui/icons-material";
-import { Box, Card, CardActionArea, CardContent, CardHeader, CardMedia, Container, Fade, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
-    const navigate = useNavigate()
-    const [showFuncMarket, setshowFuncMarket] = useState(false)
-    const [showFuncCart, setshowFuncCart] = useState(false)
+    const navigate = useNavigate();
 
     return (
         <Box display='block' overflow="hidden" position="relative" width='100%' height='calc(100vh - 96px)'>
@@ -20,8 +17,8 @@ export const Home = () => {
                             <CardMedia
                                 component="img"
                                 height="192"
-                                image="/funco2.jpeg"
-                                alt="funcco #3"
+                                image="/funco2.png"
+                                alt="funcco #2"
                             />
                             <CardContent style={{ display: 'flex', flexFlow: 'row', gap: 16, justifyContent: 'flex-start', alignItems: 'center' }}>
                                 <Store color="primary" sx={{ zIndex: 2, width: 24, height: 24 }} />

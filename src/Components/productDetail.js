@@ -1,6 +1,6 @@
 import { Add,Remove, RemoveShoppingCart, ShoppingCart, ArrowBack } from '@mui/icons-material';
 import { Paper, Typography, Box, Button, Grid, Divider, IconButton, Input } from '@mui/material';
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom'
 import { ProductsList, UserCart } from '../context';
 import { getCart } from '../services/api';
@@ -50,10 +50,6 @@ const ProductDetail = (props) => {
         }
         // eslint-disable-next-line
     }
-
-    useEffect(() => {
-        console.log({ cart });
-    }, [qty])
     
     return (
         <Grid sx={{ position: 'relative' }}>
