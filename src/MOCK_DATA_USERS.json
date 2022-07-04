@@ -1,0 +1,22 @@
+[
+  { "id": 1, "name": "Nolie", "email": "nbrim0@digg.com", "gender": "Female" },
+  { "id": 2, "name": "Ame", "email": "atabb1@disqus.com", "gender": "Female" },
+  {
+    "id": 3,
+    "name": "Brittan",
+    "email": "bsandells2@tripadvisor.com",
+    "gender": "Female"
+  },
+  {
+    "id": 4,
+    "name": "Nissy",
+    "email": "nbeccles3@nifty.com",
+    "gender": "Female"
+  },
+  {
+    "id": 5,
+    "name": "Bernarr",
+    "email": "bcossell4@opensource.org",
+    "gender": "Male"
+  }
+]
