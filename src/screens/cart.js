@@ -49,9 +49,11 @@ export const Content = ({ isCart = true }) => {
                                 }
                             >
                                 <ListItemAvatar>
-                                <Avatar>
-                                    <img src={item.img} alt={item.name} />
-                                </Avatar>
+                                    <Avatar
+                                        src={item.img}
+                                        alt={item.name}
+                                        sx={{ width: 56, height: 56, marginRight: 4 }}
+                                    />
                                 </ListItemAvatar>
                                 <ListItemText style={{ maxWidth: '45%' }} primary={item.name} secondary={`Quantity: ${item.qty}`} />
                                 <ListItemText primary={formattedPrice(item.price)} secondary={`Total: ${formattedPrice(item.qty * item.price)}`} />
