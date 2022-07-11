@@ -39,6 +39,7 @@ const ProductDetail = (props) => {
     const removeFromCart = async () => {
         const k = cart.length ? [...filteredCart] : []
         await setCart(k);
+        setqty(0)
     }
 
     const qtyHandler = async (adding = false) => {
@@ -110,7 +111,7 @@ const ProductDetail = (props) => {
                             <IconButton variant="outlined" color="primary" onClick={() => qtyHandler(false)} >
                                 <Remove />
                             </IconButton>
-                            <Input value={qty} onChange={(e) => setqty(e?.target?.value || e)} color={'primary'} sx={{ width: 64, textAlign: 'center' }} />
+                            <Input value={qty} onChange={(e) => setqty(e?.target?.value || e)} color={'primary'} sx={{ width: 64, textAlign: 'center' }} disabled />
                             <IconButton variant="outlined" color="primary" onClick={() => qtyHandler(true)} >
                                 <Add />
                             </IconButton>
