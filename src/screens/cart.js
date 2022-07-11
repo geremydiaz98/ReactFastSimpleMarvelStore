@@ -64,7 +64,7 @@ export const Content = ({ isCart = true }) => {
                     
                 {isCart 
                     ? <Grid container spacing={2} justifyContent={'flex-end'} marginY={2}>
-                        {items.length
+                        {items && items.length
                             ? <Button
                                 variant="contained"
                                 color="primary"
@@ -86,7 +86,7 @@ export const Content = ({ isCart = true }) => {
                     variant="outlined"
                     color="primary"
                     LinkComponent={Link}
-                    to={items.length ? `/` : `/market`}
+                    to={items && items.length ? `/` : `/market`}
                     startIcon={<ArrowBack />}
                     sx={{ marginTop: 'auto' }}
                 >

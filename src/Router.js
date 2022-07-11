@@ -25,7 +25,7 @@ export const Router = () => {
     const localCart = {
         ...auxCart,
         ...cart,
-        total: items.map(item => item.price * item.qty).reduce((a, b) => a + b, 0),
+        total: items && Array.isArray(items) ? items.map(item => item.price * item.qty).reduce((a, b) => a + b, 0) : 0,
         items,
         setCart: (value) => {
             setitems(value);

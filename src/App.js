@@ -66,7 +66,7 @@ const App = () => {
             <ListItemLink
               icon={<ShoppingCart />}
               otherIcon={
-                <Chip label={items.length} variant="outlined" />
+                <Chip label={items && Array.isArray(items) ? items.length : 0} variant="outlined" />
               }
               to={'/cart'}
               key='cart'
