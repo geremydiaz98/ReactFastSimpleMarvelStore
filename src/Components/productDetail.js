@@ -11,11 +11,15 @@ const ProductDetail = (props) => {
     const products = useContext(ProductsList);
     const { items, setCart } = useContext(UserCart);
 
-    const cart = items || getCart();
+    const cart = items && Array.isArray(items) ? items : getCart();
 
     const product = state?.item || products.find((item) => Number(item.id) === Number(productId));
-    const matchCart = useMemo(() => cart.find(({ id }) => Number(id) === Number(productId)), [cart, productId]);
-    const filteredCart = useMemo(() => cart.filter(({ id }) => Number(id) !== Number(productId)), [cart, productId]);
+    const matchCart = useMemo(() => {
+        return cart && Array.isArray(cart) ? cart.find(({ id }) => Number(id) === Number(productId)) : null
+    }, [cart, productId]);
+    const filteredCart = useMemo(() => {
+        return cart && Array.isArray(cart) ? cart.filter(({ id }) => Number(id) !== Number(productId)) : []
+    }, [cart, productId]);
 
     const [qty, setqty] = useState(matchCart?.qty || 0);
     const buy = useMemo(() => ({ ...product, qty }), [product, qty]);

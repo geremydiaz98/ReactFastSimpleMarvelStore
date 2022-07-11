@@ -6,7 +6,7 @@ import { UserCart } from '../context';
 import { Content } from './cart';
 
 const Checkout = () => { 
-    const { total } = useContext(UserCart);
+    const { total, setCart } = useContext(UserCart);
     
     const formattedPrice = (n) => Number(n)
         .toLocaleString('en-US', {
@@ -18,6 +18,10 @@ const Checkout = () => {
     
     const discounted = useMemo(() => total * 0.95, [total])
     const fees = useMemo(() => discounted * 1.025, [discounted])
+
+    const resetCart = async() => {
+        await setCart([])
+    }
     
     return (
         <Box>            
@@ -54,7 +58,7 @@ const Checkout = () => {
                         <Button variant='text' color='primary' >
                             apply coupon
                         </Button>
-                        <Button LinkComponent={Link} to={'/payment'} variant='contained' >
+                        <Button LinkComponent={Link} to={'/payment'} variant='contained' onClick={() => resetCart()} >
                             PAY
                         </Button>
                     </Container>

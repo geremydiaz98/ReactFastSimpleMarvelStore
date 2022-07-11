@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import App from "./App";
 import ProductDetail from "./Components/productDetail";
@@ -33,6 +33,12 @@ export const Router = () => {
         },
         getCart: () => getCart(),
     };
+
+    useEffect(() => {
+      if (!cart || !cart?.items) setCart(localCart)
+      // eslint-disable-next-line
+    }, [])
+    
 
     return (
         <PL.Provider value={ProductsJson || []}>
